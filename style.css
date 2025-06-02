@@ -1,54 +1,35 @@
-/* Общие стили */
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-}
-
-/* Центрирующий контейнер для сообщения вне Telegram */
-.center {
-  display: none;            /* по умолчанию скрыт */
-  height: 100vh;
-  text-align: center;
-  color: #666;
-  font-size: 1.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Основной контейнер WebApp */
-.container {
-  max-width: 400px;
-  margin: 50px auto;
   padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   text-align: center;
-}
-h1 {
-  margin-bottom: 20px;
-  font-size: 1.4em;
+  background-color: #f4f4f4;
 }
 
-/* Стили кнопок */
-.buttons button {
-  width: 100%;
-  padding: 10px 0;
-  margin: 10px 0;
-  font-size: 1em;
-  font-weight: bold;
-  color: #fff;
-  background-color: #0088cc;
+h2 {
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 24px;
+  font-size: 16px;
   border: none;
-  border-radius: 6px;
+  background-color: #0088cc;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
 }
-.buttons button:hover {
-  background-color: #007ab8;
+
+button:hover {
+  background-color: #0077b3;
 }
-.buttons button:active {
-  opacity: 0.8;
+
+#outside-message {
+  display: none;
+  padding: 40px;
+}
+
+#inside-content {
+  display: none;
 }
