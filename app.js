@@ -1,31 +1,40 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const outsideMsg = document.getElementById('outside-message');
   const insideContent = document.getElementById('inside-content');
 
+  // Проверяем, запущено ли внутри Telegram
   if (typeof Telegram === 'undefined' || !Telegram.WebApp) {
-    outsideMsg.style.display = 'flex';
+    outsideMsg.style.display = 'block';
     insideContent.style.display = 'none';
     return;
   }
 
-  Telegram.WebApp.expand(); // Растягиваем окно
+  // Telegram WebApp инициализация
+  const webApp = Telegram.WebApp;
+  webApp.expand();
+  insideContent.style.display = 'block';
 
+  // Функция отправки данных
   function sendOptionData(option, price) {
     const data = {
       type: "stars_payment",
+      option: option,
       amount: price
     };
-    Telegram.WebApp.sendData(JSON.stringify(data));
-    Telegram.WebApp.close();
+    webApp.sendData(JSON.stringify(data));
+    webApp.close();
   }
 
-  document.getElementById('vacancyBtn').addEventListener('click', function() {
+  // Обработчики кнопок
+  document.getElementById('vacancyBtn').addEventListener('click', () => {
     sendOptionData('vacancy', 100);
   });
-  document.getElementById('advert24Btn').addEventListener('click', function() {
+
+  document.getElementById('advert24Btn').addEventListener('click', () => {
     sendOptionData('advert_24h', 250);
   });
-  document.getElementById('advertForeverBtn').addEventListener('click', function() {
+
+  document.getElementById('advertForeverBtn').addEventListener('click', () => {
     sendOptionData('advert_forever', 500);
   });
 });
