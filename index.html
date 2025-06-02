@@ -1,0 +1,28 @@
+<?php
+header_remove("X-Frame-Options");
+header("Content-Security-Policy: frame-ancestors 'self' https://t.me https://telegram.org");
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оплата Stars</title>
+<link rel="stylesheet" href="style.css?v=1.0.1">
+  <!-- Чтобы браузер не кешировал -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+</head>
+<body>
+  <div id="app">
+    <h2>Выберите вариант оплаты</h2>
+    <button onclick="payStars(100)">Вакансия — 100 ⭐</button>
+    <button onclick="payStars(250)">Реклама 24ч — 250 ⭐</button>
+    <button onclick="payStars(500)">Реклама навсегда — 500 ⭐</button>
+  </div>
+
+<script src="app.js?v=1.0.1"></script>
+</body>
+</html>
