@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebApp Пример</title>
-  <!-- Подключаем CSS-стили -->
-  <link rel="stylesheet" href="styles.css?v=1.0.1">
-  <!-- Подключаем Telegram WebApp API -->
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Оплата через Stars</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Сообщение для пользователей вне Telegram -->
-  <div id="outside-message" class="center">Откройте через Telegram</div>
-
-  <!-- Основной контент WebApp -->
-  <div id="inside-content" class="container">
-    <h1>Выберите вариант оплаты</h1>
-    <div class="buttons">
-      <button id="vacancyBtn">Вакансия — 100 ⭐</button>
-      <button id="advert24Btn">Реклама на 24ч — 250 ⭐</button>
-      <button id="advertForeverBtn">Реклама навсегда — 500 ⭐</button>
-    </div>
+  <div id="outside-message">
+    <h2>Откройте через Telegram</h2>
+    <p>Для оплаты используйте кнопку в боте</p>
   </div>
 
-  <!-- Подключаем наш JavaScript-код -->
-  <script src="app.js"?v=1.0.1></script>
+  <div id="inside-content">
+    <h2>Выберите вариант оплаты</h2>
+    <button id="vacancyBtn">Вакансия — 100 ⭐</button>
+    <button id="advert24Btn">Реклама на 24ч — 250 ⭐</button>
+    <button id="advertForeverBtn">Реклама навсегда — 500 ⭐</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
