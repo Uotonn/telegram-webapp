@@ -2,22 +2,23 @@ document.addEventListener('DOMContentLoaded', function() {
   const outsideMsg = document.getElementById('outside-message');
   const insideContent = document.getElementById('inside-content');
 
-  // Проверяем, запущено ли WebApp внутри Telegram
   if (typeof Telegram === 'undefined' || !Telegram.WebApp) {
-    // Если нет — показываем заглушку и прячем основной контент
     outsideMsg.style.display = 'flex';
     insideContent.style.display = 'none';
     return;
   }
 
-  // Функция отправки данных выбранного варианта боту
+  Telegram.WebApp.expand(); // Растягиваем окно
+
   function sendOptionData(option, price) {
-    const data = { option: option, price: price };
-    // Отправляем данные боту и автоматически закрываем WebApp:contentReference[oaicite:2]{index=2}
+    const data = {
+      type: "stars_payment",
+      amount: price
+    };
     Telegram.WebApp.sendData(JSON.stringify(data));
+    Telegram.WebApp.close();
   }
 
-  // Назначаем обработчики кликов на кнопки
   document.getElementById('vacancyBtn').addEventListener('click', function() {
     sendOptionData('vacancy', 100);
   });
